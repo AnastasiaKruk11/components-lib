@@ -1,0 +1,53 @@
+.input {
+    border: 1px solid #6a6b6b7c;
+    border-radius: 3px;
+    padding: 5px 10px;
+    height: 30px;
+}
+
+.input::placeholder {
+    color: #000;
+    transition: opacity 0.2s ease;
+}
+
+.input:focus {
+    border: none;
+    outline: 2px solid #1976D2;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+}
+
+.inputWrapper {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    margin: 0 auto;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 30px;
+    width: 200px;
+}
+
+.inputLabel {
+    position: relative;
+    display: inline-block;
+    transform: translate(10px, 8px);
+    background-color: #fff;
+    padding: 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1976D2;
+    text-align: center;
+}
+
+.errorInput {
+    border: 1px solid #d32f2f;
+}
+
+.errorInput:focus {
+    outline: 2px solid #d32f2f;
+}
+
+.errorLabel {
+    color: #d32f2f;
+}

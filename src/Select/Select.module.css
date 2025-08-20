@@ -1,0 +1,42 @@
+.select {
+    width: 120px;
+    height: 50px;
+    border: 1px solid #6a6b6b7c;
+    border-radius: 4px;
+    font-size: 18px;
+    text-align: center;
+    color: #414242a6;
+    font-weight: 500;
+}
+
+.select:hover {
+    border: 2px solid #2525257c;
+}
+
+.select:focus {
+    border: none;
+    outline: 2px solid #1976D2;
+}
+
+.selectWrapper {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.selectLabel {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    padding: 0 4px;
+    transform: translate(10px, 8px);
+    font-size: 12px;
+    font-weight: 600;
+    color: #1976D2;
+    width: 40px;
+}
+
+.select:focus > .option:checked {
+    background-color: rgb(226, 228, 228);
+}
