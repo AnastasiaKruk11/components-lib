@@ -35,10 +35,10 @@ const Modal: FC<ModalProps> = ( {content, isOpen, children, onClose} ) => {
          document.removeEventListener('mousedown', handleClickOutside);
        };
 
-    }, [isOpen, onClose]);   
+    }, [isOpen, onClose]);
 
     return (
-        <div className={modalClasses.join(' ')}>
+        <div role="modal" className={modalClasses.join(' ')}>
             <div className={styles.modal} ref={modalRef}>
             {content}
             {children}

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import Switch from '../Switch/Switch';
@@ -20,6 +18,6 @@ export const DefaultSwitch: Story = {
     label: "switch",
     disabled: false,
     checked: false,
-    onChange: () => {console.log('switch')}
+    onChange: () => {}
   },
 };

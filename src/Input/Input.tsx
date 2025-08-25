@@ -1,8 +1,8 @@
 import React, {FC} from "react";
-import * as styles from './Input.module.css';
+import styles from './Input.module.css';
 
-export interface InputProps {
-    error: boolean;
+export interface InputProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+    error?: boolean;
     placeholder: string;
     label: string;
 }
@@ -22,7 +22,7 @@ const Input: FC<InputProps> = ( {error, placeholder, label, ...props} ) => {
             <label className={labelClasses.join(' ')} htmlFor="input">
                 {label}
             </label>
-            <input type="text" id="input" className={inputClasses.join(' ')} placeholder={placeholder} {...props}></input>
+            <input type="text" id="input" aria-label="Text" className={inputClasses.join(' ')} placeholder={placeholder} {...props}></input>
         </div>
     );
 };

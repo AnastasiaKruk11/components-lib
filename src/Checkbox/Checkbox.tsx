@@ -1,13 +1,13 @@
 import React, {FC} from "react";
 import * as styles from './Checkbox.module.css';
 
-export interface CheckboxProps {
+export interface CheckboxProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     label: string;
     disabled: boolean;
-    checked: boolean;
+    checked?: boolean;
 }
 
-const Checkbox: FC<CheckboxProps> = ( {label, disabled, checked} ) => {
+const Checkbox: FC<CheckboxProps> = ( {label, disabled, checked, ...props} ) => {
 
     const labelClasses = [styles.checkboxLabel];
 
@@ -17,7 +17,7 @@ const Checkbox: FC<CheckboxProps> = ( {label, disabled, checked} ) => {
 
     return (
         <label className={styles.checkboxWrapper}>
-            <input type="checkbox" className={styles.checkbox} disabled={disabled} checked={checked}></input>
+            <input type="checkbox" className={styles.checkbox} disabled={disabled} checked={checked} {...props}></input>
             <span className={labelClasses.join(' ')}>{label}</span>
         </label>
     );

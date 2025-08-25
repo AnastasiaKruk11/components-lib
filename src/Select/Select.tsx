@@ -6,17 +6,17 @@ export interface SelectOptions {
     value: string;
 }
 
-export interface SelectProps {
+export interface SelectProps extends React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement> {
     label: string;
     options: Array<SelectOptions>;
 }
 
-const Select: FC<SelectProps> = ( {label, options} ) => {
+const Select: FC<SelectProps> = ( {label, options, ...props} ) => {
 
     return (
         <div className={styles.selectWrapper}>
             <label className={styles.selectLabel} htmlFor="select">{label}</label>
-            <select className={styles.select} id="select">
+            <select className={styles.select} {...props} id="select">
                 {options.map(item => (
                     <option className={styles.option} key={item.key}>{item.value}</option>
                 ))}

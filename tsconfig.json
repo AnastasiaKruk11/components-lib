@@ -9,7 +9,8 @@
         "lib": [ "ES2015", "DOM" ],
         "outDir": "./dist/",
         "sourceMap": true,
-        "declaration": true
+        "declaration": true,
+        "types": ["jest", "node"]
     },
     "include": ["src", "global.d.ts"],
     "exclude": ["node_modules", "dist", "./src/stories"]

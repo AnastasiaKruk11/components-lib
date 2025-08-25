@@ -1,26 +1,30 @@
-import React, {FC} from "react";
+import React, {FC, useEffect, useState} from "react";
 import * as styles from './Switch.module.css';
 
-export interface SwitchProps {
+export interface SwitchProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     label: string;
     disabled: boolean;
-    checked: boolean;
-    onChange?: (value: string) => void;
+    checked?: boolean;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Switch: FC<SwitchProps> = ( {label, disabled, checked, onChange, ...props} ) => {
+const Switch: FC<SwitchProps> = ( {label, disabled, checked, onChange, ...rest} ) => {
 
     const labelClasses = [styles.switchLabel];
 
     if (disabled) {
         labelClasses.push(styles.switchLabelDisabled);
     }
+    
+    const [inputValue, setInputValue] = useState(checked);
 
-    const resolveChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (onChange) {
-            onChange(event.target.value);
-        }
+    const resolveChange = (event: React.ChangeEvent<HTMLInputElement>) => {  
+        onChange(event);
     };
+
+    useEffect(() => {
+        setInputValue(checked);
+    }, [checked]);
 
     return (
         <div className={styles.contentWrapper}>
@@ -29,9 +33,9 @@ const Switch: FC<SwitchProps> = ( {label, disabled, checked, onChange, ...props}
                     type="checkbox"
                     className={styles.checkbox} 
                     disabled={disabled} 
-                    checked={checked}
+                    checked={inputValue}
                     onChange={resolveChange}
-                    {...props}>
+                    {...rest}>
                 </input>
                 <span className={styles.checkboxSwitch}></span>
             </div>

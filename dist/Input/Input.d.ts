@@ -1,6 +1,6 @@
-import { FC } from "react";
-export interface InputProps {
-    error: boolean;
+import React, { FC } from "react";
+export interface InputProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+    error?: boolean;
     placeholder: string;
     label: string;
 }

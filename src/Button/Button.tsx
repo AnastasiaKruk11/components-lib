@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import * as styles from './Button.module.css';
 
 export interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>{
-    children?: any;
+    children?: string;
     size: string;
     variant: string;
 }

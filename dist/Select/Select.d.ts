@@ -1,9 +1,9 @@
-import { FC } from "react";
+import React, { FC } from "react";
 export interface SelectOptions {
     key: number;
     value: string;
 }
-export interface SelectProps {
+export interface SelectProps extends React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement> {
     label: string;
     options: Array<SelectOptions>;
 }
