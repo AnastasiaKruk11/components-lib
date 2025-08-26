@@ -1,5 +1,5 @@
 import React, {FC, useRef, useEffect} from "react";
-import * as styles from './Modal.module.css';
+import styles from './Modal.module.css';
 
 export interface ModalProps {
     content: string;

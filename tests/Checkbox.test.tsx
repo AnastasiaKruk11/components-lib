@@ -15,7 +15,7 @@ describe("Checkbox", () => {
     expect(input.checked).toBe(false);
   });
 
-  it("could be disabled", () => {
+  it("is disabled while using the corresponding prop", () => {
     render(<Checkbox label="Accept" disabled={true} />);
     const input = screen.getByRole("checkbox") as HTMLInputElement;
     expect(input.disabled).toBe(true);

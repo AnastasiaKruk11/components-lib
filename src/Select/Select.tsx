@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import * as styles from './Select.module.css';
+import styles from './Select.module.css';
 
 export interface SelectOptions {
     key: number;

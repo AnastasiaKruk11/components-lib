@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import * as styles from './Checkbox.module.css';
+import styles from './Checkbox.module.css';
 
 export interface CheckboxProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     label: string;

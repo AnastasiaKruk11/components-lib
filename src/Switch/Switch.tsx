@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from "react";
-import * as styles from './Switch.module.css';
+import styles from './Switch.module.css';
 
 export interface SwitchProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     label: string;

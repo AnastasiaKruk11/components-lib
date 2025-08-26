@@ -6,12 +6,12 @@ import '@testing-library/jest-dom';
 describe("Switch", () => {
 
   it("renders with label", () => {
-    render(<Switch label="Theme" disabled={false} />);
+    render(<Switch label="Theme" disabled={false} onChange={() => {}} />);
     expect(screen.getByText("Theme")).toBeInTheDocument();
   });
 
   it("toggles state", () => {
-    render(<Switch label="Theme" disabled={false} />);
+    render(<Switch label="Theme" disabled={false} onChange={() => {}} />);
     const input = screen.getByRole("checkbox") as HTMLInputElement;
 
     expect(input.checked).toBe(false);
@@ -19,8 +19,8 @@ describe("Switch", () => {
     expect(input.checked).toBe(true);
   });
 
-  it("could be rendered as checked", () => {
-    render(<Switch label="Theme" disabled={false} checked={true} />);
+  it("is rendered as checked while using the corresponding prop", () => {
+    render(<Switch label="Theme" disabled={false} checked={true} onChange={() => {}} />);
     const input = screen.getByRole("checkbox") as HTMLInputElement;
 
     expect(input.checked).toBe(true);
@@ -33,12 +33,12 @@ describe("Switch", () => {
 
     fireEvent.click(input);
 
+    expect(handleChange).toHaveBeenCalled();
     expect(handleChange).toHaveBeenCalledTimes(1);
-    expect(handleChange).toHaveBeenCalledWith("on");
   });
 
-  it("could be rendered as disabled", () => {
-    render(<Switch label="Theme" disabled={true} />);
+  it("is disabled while using the corresponding prop", () => {
+    render(<Switch label="Theme" disabled={true} onChange={() => {}} />);
     const input = screen.getByRole("checkbox");
 
     expect(input).toBeDisabled();

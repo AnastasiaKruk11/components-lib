@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
-import * as styles from './Button.module.css';
+import styles from './Button.module.css';
 
 export interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>{
-    children?: string;
+    children?: React.ReactNode;
     size: string;
     variant: string;
+    onClick?: () => void;
 }
 
-const Button: FC<ButtonProps> = ({ children, size, variant, ...props }) => {
+const Button: FC<ButtonProps> = ({ children, size, variant, onClick, ...props }) => {
 
     const rootClasses = [styles.button];
 
@@ -36,7 +37,7 @@ const Button: FC<ButtonProps> = ({ children, size, variant, ...props }) => {
     };
 
     return (
-        <button {...props} className={rootClasses.join(' ')}>
+        <button {...props} onClick={onClick} className={rootClasses.join(' ')}>
             {children}
         </button>
     );

@@ -18,7 +18,8 @@ export const SmallTextBtn: Story = {
   args: {
     size: 'small',
     variant: 'text',
-    children: 'Button'
+    children: 'Button',
+    onClick: () => {console.log('click')}
   },
 };
 
@@ -26,7 +27,8 @@ export const MediumTextBtn: Story = {
   args: {
     size: 'medium',
     variant: 'text',
-    children: 'Button'
+    children: 'Button',
+    onClick: () => {console.log('click')}
   },
 };
 
@@ -34,7 +36,8 @@ export const LargeTextBtn: Story = {
   args: {
     size: 'large',
     variant: 'text',
-    children: 'Button'
+    children: 'Button',
+    onClick: () => {console.log('click')}
   },
 };
 
@@ -42,7 +45,8 @@ export const SmallOutlinedBtn: Story = {
   args: {
     size: 'small',
     variant: 'outlined',
-    children: 'Button'
+    children: 'Button',
+    onClick: () => {console.log('click')}
   },
 };
 
@@ -50,7 +54,8 @@ export const MediumOutlinedBtn: Story = {
   args: {
     size: 'medium',
     variant: 'outlined',
-    children: 'Button'
+    children: 'Button',
+    onClick: () => {console.log('click')}
   },
 };
 
@@ -58,7 +63,8 @@ export const LargeOutlinedBtn: Story = {
   args: {
     size: 'large',
     variant: 'outlined',
-    children: 'Button'
+    children: 'Button',
+    onClick: () => {console.log('click')}
   },
 };
 
@@ -66,7 +72,8 @@ export const SmallContainedBtn: Story = {
   args: {
     size: 'small',
     variant: 'contained',
-    children: 'Button'
+    children: 'Button',
+    onClick: () => {console.log('click')}
   },
 };
 
@@ -74,7 +81,8 @@ export const MediumContainedBtn: Story = {
   args: {
     size: 'medium',
     variant: 'contained',
-    children: 'Button'
+    children: 'Button',
+    onClick: () => {console.log('click')}
   },
 };
 
@@ -82,6 +90,7 @@ export const LargeContainedBtn: Story = {
   args: {
     size: 'large',
     variant: 'contained',
-    children: 'Button'
+    children: 'Button',
+    onClick: () => {console.log('click')}
   },
 };
