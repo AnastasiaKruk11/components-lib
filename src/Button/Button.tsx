@@ -37,7 +37,7 @@ const Button: FC<ButtonProps> = ({ children, size, variant, onClick, ...props })
     };
 
     return (
-        <button {...props} onClick={onClick} className={rootClasses.join(' ')}>
+        <button onClick={onClick} className={rootClasses.join(' ')} {...props} >
             {children}
         </button>
     );

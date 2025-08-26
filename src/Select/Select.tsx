@@ -16,7 +16,7 @@ const Select: FC<SelectProps> = ( {label, options, ...props} ) => {
     return (
         <div className={styles.selectWrapper}>
             <label className={styles.selectLabel} htmlFor="select">{label}</label>
-            <select className={styles.select} {...props} id="select">
+            <select className={styles.select} id="select" {...props}>
                 {options.map(item => (
                     <option className={styles.option} key={item.key}>{item.value}</option>
                 ))}

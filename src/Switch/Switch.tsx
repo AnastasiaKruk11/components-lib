@@ -8,7 +8,7 @@ export interface SwitchProps extends React.DetailedHTMLProps<React.InputHTMLAttr
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Switch: FC<SwitchProps> = ( {label, disabled, checked, onChange, ...rest} ) => {
+const Switch: FC<SwitchProps> = ( {label, disabled, checked, onChange, ...props} ) => {
 
     const labelClasses = [styles.switchLabel];
 
@@ -35,7 +35,7 @@ const Switch: FC<SwitchProps> = ( {label, disabled, checked, onChange, ...rest} 
                     disabled={disabled} 
                     checked={inputValue}
                     onChange={resolveChange}
-                    {...rest}>
+                    {...props}>
                 </input>
                 <span className={styles.checkboxSwitch}></span>
             </div>
